@@ -61,6 +61,7 @@ function validate()
                     else
                     {
                         errPassword.innerHTML='';
+                        alert("You registered successfully");
                         return true;
                     }
                 }
