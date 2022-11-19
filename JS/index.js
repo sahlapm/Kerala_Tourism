@@ -68,10 +68,73 @@ function validate()
             }
         }
     }
-   
-
-   
-   
 
     
 }
+
+ /*
+var strengthbar = document.getElementById("strength");
+code.addEventListener("keyup", function() {
+    checkpassword(code.value);
+  });
+ 
+  
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+  
+  */
+  
+  function validatePassword(password) 
+  {
+    var Password_strength = document.getElementById("Password_strength");
+    var strength = 0;
+  
+    if (password.match(/[a-z]+/)) 
+    {
+      strength += 1;
+      
+    }
+    if (password.match(/[A-Z]+/)) 
+    {
+      strength += 1;
+     
+    }
+    if (password.match(/[0-9]+/))
+     {
+      strength += 1;
+      
+    }
+    
+   if (password.length >= 8) 
+   {
+      strength +=1;
+      
+    }
+  
+    switch (strength)
+     {
+      case 0:
+        Password_strength.style.color = "white";
+        Password_strength.innerHTML="";
+        break;
+  
+      case 1:
+        Password_strength.style.color = "red";
+        Password_strength.innerHTML="Weak";
+        break;
+  
+      case 2:
+        Password_strength.style.color = "orange";
+        Password_strength.innerHTML="Medium";
+        break;
+  
+      case 3:
+        Password_strength.style.color = "orange";
+        Password_strength.innerHTML="Medium";
+        break;
+  
+      case 4:
+        Password_strength.style.color = "green";
+        Password_strength.innerHTML="Strong";
+        break;
+    }
+  }
